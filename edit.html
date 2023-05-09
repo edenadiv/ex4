@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submarines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/battleships.css">
+    <script src="js/functions.js"></script>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="intro">
+        <div id="game-intro" style="margin: 5vh auto;">
+            <div id="intro-name" style="margin: 0 auto;">
+                <div id="intro-name-container" style="display: flex; flex-direction: column;">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player src="files/lotties/main (1).json" background="transparent" speed="0.8"
+                        style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                    <h1 style="color: #1d434a;" id="intro-name-text">Battleships</h1>
+                </div>
+            </div>
+
+            <div id="intro-selection" style="margin: 0 auto;">
+                <div id="intro-container">
+                    <div id="intro-player">
+                        <!-- <form style="align-items: center; " action="edit.php" method="get"> -->
+                            <div id="player-name">
+                                <!-- <div id="player-name-text">Player Name: </div> -->
+                                <input style="margin: 0 auto;" placeholder="Name" type="text" name=""
+                                    id="player-name-input">
+                            </div>
+                            <div style="width: 40vw; flex-direction: column; align-items: center;" id="player-board">
+                                <div id="player-board-text">
+                                    Board Size: <br>
+                                </div>
+                                <div id="player-board-radio"
+                                    style="flex-direction: column; justify-content: space-evenly; display: flex;">
+                                    <div style="flex-direction: row; justify-content: space-evenly; display: flex;">
+                                        <div>
+                                            <input data-board-selected-size="10" type="radio" name="board-size"
+                                                class="board-size-selectors form-check-input"
+                                                id="board-size-select1">&nbsp;10²&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                        <div>
+                                            <input data-board-selected-size="11" type="radio" name="board-size"
+                                                class="board-size-selectors form-check-input"
+                                                id="board-size-select2">&nbsp;11²&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                        <div>
+                                            <input data-board-selected-size="12" type="radio" name="board-size"
+                                                class="board-size-selectors form-check-input"
+                                                id="board-size-select3">&nbsp;12²&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                    <div style="flex-direction: row; justify-content: space-evenly; display: flex;">
+                                        <div>
+                                            <input data-board-selected-size="13" type="radio" name="board-size"
+                                                class="board-size-selectors form-check-input"
+                                                id="board-size-select4">&nbsp;13²&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                        <div>
+                                            <input data-board-selected-size="14" type="radio" name="board-size"
+                                                class="board-size-selectors form-check-input"
+                                                id="board-size-select5">&nbsp;14²&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                        <div>
+                                            <input data-board-selected-size="15" type="radio" name="board-size"
+                                                class="board-size-selectors form-check-input"
+                                                id="board-size-select6">&nbsp;15²&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="align-self: center; font-size: 1.6em;" id="player-battleships">
+                                <div id="player-battleships-text">
+                                    Number of <br> Battleships:
+                                </div>
+                                <div style="width: 50%;flex-wrap: wrap; display: flex; justify-content: space-evenly; flex-direction: row;"
+                                    id="player-battleships-inputs">
+                                    <div style="width: 50%; justify-content: space-evenly; display: flex; flex-direction: row;"
+                                        id="player-battleships-inputs-part1">
+                                        <div id="size2" class="size">2&nbsp;<input type="number" min="1" max="5" name=""
+                                                id="size2-input" class="size-inputs form-control form-control-lg">
+                                        </div>
+                                        <div id="size3" class="size">3&nbsp;<input type="number" min="1" max="5" name=""
+                                                id="size3-input" class="size-inputs form-control form-control-lg">
+                                        </div>
+                                    </div>
+                                    <div style="width: 50%; justify-content: space-evenly; display: flex; flex-direction: row;"
+                                        id="player-battleships-inputs-part2">
+                                        <div id="size4" class="size">4&nbsp;<input type="number" min="1" max="5" name=""
+                                                id="size4-input" class="size-inputs form-control form-control-lg">
+                                        </div>
+                                        <div id="size5" class="size">5&nbsp;<input type="number" min="1" max="5" name=""
+                                                id="size5-input" class="size-inputs form-control form-control-lg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin:0 auto;" id="player-submit">
+                                <button style="margin:0 auto;" type="submit" id="player-submit-btn">Start Game</button>
+                            </div>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="game">
+        <div id="game-board"></div>
+        <div id="game-details">
+            <div id="stats-container">
+                <div id="stats">
+                    <div id="stats-timer">
+                        <label id="seconds">00</label>:<label id="minutes">00</label>
+                    </div>
+                    <div id="stats-name-container">
+                        <div id="stats-name-text">Player Name: </div>
+                        <div id="stats-name-val"></div>
+                    </div>
+                    <div id="stats-board-container">
+                        <div id="stats-board-text">Board Size: </div>
+                        <div id="stats-board-val"></div>
+                    </div>
+                    <div id="stats-turns-container">
+                        <div id="stats-turns-text">Turn Number: </div>
+                        <div id="stats-turns-val"></div>
+                    </div>
+                    <div id="stats-battleships-container">
+                        <div id="stats-battleships">
+                            <div id="stats-battleships-text">Ships Left: </div>
+                            <div id="stats-battleships-flex-main">
+                                <div id="stats-battleships-flex1">
+                                    <div id="stats-battleships-2-container">
+                                        <div id="stats-battleships-2-text">Size 2: </div>
+                                        <div id="stats-battleships-2"></div>
+                                    </div>
+                                    <div id="stats-battleships-3-container">
+                                        <div id="stats-battleships-3-text">Size 3: </div>
+                                        <div id="stats-battleships-3"></div>
+                                    </div>
+                                </div>
+                                <div id="stats-battleships-flex2">
+                                    <div id="stats-battleships-4-container">
+                                        <div id="stats-battleships-4-text">Size 4: </div>
+                                        <div id="stats-battleships-4"></div>
+                                    </div>
+                                    <div id="stats-battleships-5-container">
+                                        <div id="stats-battleships-5-text">Size 5: </div>
+                                        <div id="stats-battleships-5"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="leaderboard-container">
+                <div id="leaderboard">
+                    <div id="leaderboard-head">
+                        <div id="leaderboard-head-text">Recent Scores: </div>
+                    </div>
+                    <div id="leaderboard-places">
+                        <div id="leaderboard-place-1">
+                            <div id="leaderboard-place-1-text">1. </div>
+                            <div id="leaderboard-place-1-val">placeholder</div>
+                        </div>
+                        <div id="leaderboard-place-2">
+                            <div id="leaderboard-place-2-text">2. </div>
+                            <div id="leaderboard-place-2-val">placeholder</div>
+                        </div>
+                        <div id="leaderboard-place-3">
+                            <div id="leaderboard-place-3-text">3. </div>
+                            <div id="leaderboard-place-3-val">placeholder</div>
+                        </div>
+                        <div id="leaderboard-place-4">
+                            <div id="leaderboard-place-4-text">4. </div>
+                            <div id="leaderboard-place-4-val">placeholder</div>
+                        </div>
+                        <div id="leaderboard-place-5">
+                            <div id="leaderboard-place-5-text">5. </div>
+                            <div id="leaderboard-place-5-val">placeholder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

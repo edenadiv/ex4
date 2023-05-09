@@ -1,0 +1,442 @@
+:root {
+    --main-color: #c4f3e7;
+    --second-color: #d0f1f0;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+/* Buttons Start */
+.btn {
+    display:block;
+    height: 55px;
+    width: 55px;
+    border: 1px solid black;
+    background-color: #fdfbfb;
+  }
+
+  .btn-full{
+    border-radius: 50%;
+  }
+
+  .btn-half-up{
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+
+  .btn-half-down{
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+  }
+
+  .btn-half-left{
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+  }
+
+  .btn-half-right{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  
+  .btn-full-square{
+
+  }
+
+ .hover{
+    cursor:pointer;
+    background-color: var(--second-color);
+ }
+
+.rightPlace{
+    display:block;
+    height: 55px;
+    width: 55px;
+    border: 1px solid black;
+    background-color: red;
+}
+
+.wrongPlace{
+    display:block;
+    height: 55px;
+    width: 55px;
+    border: 1px solid black;
+    background-color: rgba(251,251,251,0.5);
+}
+
+ .submarine{
+    display:block;
+    height: 55px;
+    width: 55px;
+    border: 1px solid silver;
+    background-color: black;
+ }
+
+ /* Buttons End */
+
+ /* Generic Start */
+.whiteText{
+    color: #fdfbfb;
+}
+
+.none{
+    display: none;
+}
+
+.flex{
+    display: flex;
+}
+
+ /* Generic End */
+
+ /* Game Start */
+
+#game{
+        height: 100vh;
+        flex-direction: row-reverse;
+        align-items: center;
+        background-color: var(--main-color);
+}
+
+#game-details{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    margin-left: 10vw;
+}
+
+/* Leaderboard Start */
+
+#leaderboard-container{
+}
+
+#leaderboard{
+    background-color: #fdfbfb;
+    width: 500px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+#leaderboard-head{
+    font-size: 2.5em;
+    display: flex;
+    justify-content: space-around;
+}
+
+#leaderboard-head-text{
+
+}
+
+#leaderboard-head-size{
+
+}
+
+#leaderboard-places{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8em;
+}
+
+#leaderboard-place-1{
+    display: flex;
+    justify-content: space-around;
+}
+
+#leaderboard-place-2{
+    display: flex;
+    justify-content: space-around;
+}
+
+#leaderboard-place-3{
+    display: flex;
+    justify-content: space-around;
+}
+
+#leaderboard-place-4{
+    display: flex;
+    justify-content: space-around;
+}
+
+#leaderboard-place-5{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Leaderboard End */
+
+#stats-container{
+}
+
+#stats{
+    background-color: #fdfbfb;
+    width: 500px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#stats-timer{
+    font-family: 'Asap Condensed';
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+}
+
+#stats-name-container{
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+    font-family: 'Asap Condensed';
+}
+
+#stats-board-container{
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+    font-family: 'Asap Condensed';
+}
+
+#stats-turns-container{
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+    font-family: 'Asap Condensed';
+}
+
+#stats-battleships-container{
+    display: flex;
+    font-size: 2em;
+    font-family: 'Asap Condensed';
+}
+
+#stats-battleships-text{
+    /*
+    display: flex;
+    align-items: center;
+    */
+}
+
+#stats-battleships{
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    justify-content: space-evenly;
+}
+
+#stats-battleships-flex1{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#stats-battleships-flex2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#stats-battleships-2-container{
+    display: flex;
+    padding-right: 20px;
+}
+
+#stats-battleships-3-container{
+    display: flex;
+    padding-right: 20px;
+}
+
+#stats-battleships-4-container{
+    display: flex;
+    padding-right: 20px;
+}
+
+#stats-battleships-5-container{
+    display: flex;
+    padding-right: 20px;
+}
+
+#game-board{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: 5vh;
+}
+
+/* Game End */
+
+/* Intro Start */
+
+#intro{
+    background-color: var(--main-color);
+    height: 100vh;
+    justify-content: center;
+}
+
+/*-----*/
+
+#game-intro{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*-----*/
+
+#intro-name{
+    flex-direction: row;
+    display: flex;
+}
+
+#intro-name-container{
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#intro-name-text{
+    color: black;
+    font-size: 3.3em;
+    padding-top: 29px;
+}
+
+#sub-pic{
+    position: relative;
+    width: 90px;
+    height: auto;
+}
+
+/*-----*/
+
+#intro-selection{
+    display: flex;
+    background-color: #fdfbfb;
+    width: 600px;
+    height: 450px;
+    border-radius: 20px;
+    z-index: 1;
+    border: 3px solid black;
+    justify-content: center;
+}
+
+#intro-container{
+    display: flex;
+    justify-content: center;
+}
+
+/*-----*/
+
+#intro-player{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*-----*/
+
+#player-name{
+    display: flex;
+    align-items: center;
+    width: -webkit-fill-available;
+    justify-content: inherit;
+}
+
+#player-name-text{
+    position: relative;
+    font-size: 2em;
+}
+
+#player-name-input{
+    width: 12vh;
+    border-radius: 5px;
+    font-family: 'Asap Condensed';
+    font-size: 1.4em;
+}
+
+/*-----*/
+
+#player-board{
+    position: relative;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    justify-content: inherit;
+}
+
+#player-board-text{
+    display: flex;
+    align-items: center;
+}
+
+#player-board-radio{
+
+}
+
+/*-----*/
+
+#player-battleships{
+    position: relative;
+    font-size: 2em;
+    display: flex;
+    width: -webkit-fill-available;
+    justify-content: inherit;
+}
+
+#player-battleships-text{
+
+}
+
+#player-battleships-inputs{
+    display: flex;
+    flex-direction: row;
+}
+
+#player-battleships-inputs-part1{
+
+}
+
+#player-battleships-inputs-part2{
+
+}
+
+/* All Sizes */
+.size{
+    display: flex;
+    flex-direction: row;
+}
+
+.size-inputs{
+    font-size: 0.8em;
+    width: 35px;
+    height: 25px;
+}
+
+/*-----*/
+
+#player-submit{
+    position: relative;
+}
+
+#player-submit-btn{
+    background-color: #fdfbfb;
+    padding: 10px 35px;
+    border-radius: 10px;
+    font-family: 'Asap Condensed';
+    font-size: 1.618em;
+    cursor: pointer;
+}
+
+/* Game Intro End */

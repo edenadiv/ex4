@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <title>Form 1</title>
+</head>
+
+<body id="firstForm">
+  <main>
+    <!-- I added required on certain inputs to give the user
+    feedbacks on how to correctly fill out the fields. -->
+    <h1>First Form</h1>
+    <form class="needs-validation" novalidate action="http://se.shenkar.ac.il/teach/web1/2021/get_form3.php"
+      method="get">
+      <section>
+        <section>
+          <div class="mb-3">
+            <label for="formControlInput1" class="form-label">Full Name</label>
+            <!-- in the pattern ive added '*' after '\w+' for cases when have sur name -->
+            <input required pattern="\w+\s\w+*" name="fullName" type="text" class="form-control" id="formControlInput1"
+              placeholder="Lorem Ipsum">
+            <div class="invalid-feedback">
+              First Name + Last Name,<br>
+              separate by a space.<br>
+              (can add sur name)
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="formControlInput2" class="form-label">Password</label>
+            <input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" name="pass" type="password"
+              class="form-control" id="formControlInput2" placeholder="8 characters">
+            <div class="invalid-feedback">Minimum eight characters, <br>at least one uppercase letter, <br>one lowercase
+              letter<br>and one number</div>
+          </div>
+          <div class="mb-3">
+            <label for="formControlInput3" class="form-label">Email address</label>
+            <input required name="mail" type="email" class="form-control" id="formControlInput3" placeholder="name@example.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address 
+            </div>
+          </div>
+          </div>
+          <div class="mb-3">
+            <label for="formControlInput4" class="form-label">Website</label>
+            <input required name="website" type="url" class="form-control" id="formControlInput4"
+              placeholder="https://www.shenkar.ac.il">
+              <div class="invalid-feedback">
+                Please enter a valid website address 
+              </div>
+          </div>
+          <div class="mb-3">
+            <label for="formControlInput5" class="form-label">Phone Number</label>
+            <input pattern="\d{9,10}" required name="phone" type="tel" class="form-control" id="formControlInput5" placeholder="0501234567">
+            <div class="invalid-feedback">
+              9-10 digits only
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="formControlInput7" class="form-label">Temperature</label>
+            <div>
+              <span>16</span>
+              <input onchange="changeVal()" name="temper" min="16" max="30" type="range" class="form-range"
+                id="formControlInput7">
+              <span>30</span>
+            </div>
+            <div>
+              <b id="rangeValue"></b>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="mb-3">
+            <label for="formControlInput8" class="form-label">Adress</label>
+            <textarea required name="address" type="text" cols="20" rows="3"class="form-control" id="formControlInput8" placeholder="Ana Frank 7, Ramat Gan."></textarea>
+            <!-- <input name="address" type="text" class="form-control" id="formControlInput8" placeholder="Ana Frank 7"> -->
+            <div class="invalid-feedback">
+              Please enter a valid address 
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="formControlInput6" class="form-label">Coffee No.</label>
+            <input name="coffee" type="number" min="0" class="form-control" id="formControlInput6" placeholder="1">
+          </div>
+          <label class="form-check-label">
+            Interests
+            <div class="form-check">
+              <input name="[]interests" value="workout" class="form-check-input" type="checkbox" value=""
+                id="flexCheckDefault1">
+              <label class="form-check-label" for="flexCheckDefault1">
+                Workout
+              </label>
+            </div>
+            <div class="form-check">
+              <input name="[]interests" value="sleep" class="form-check-input" type="checkbox" value=""
+                id="flexCheckChecked2">
+              <label class="form-check-label" for="flexCheckChecked2">
+                Sleep
+              </label>
+            </div>
+            <div class="form-check">
+              <input name="[]interests" value="code" class="form-check-input" type="checkbox" value=""
+                id="flexCheckChecked3">
+              <label class="form-check-label" for="flexCheckChecked3">
+                Code
+              </label>
+            </div>
+            <div class="form-check">
+              <input name="[]interests" value="eat" class="form-check-input" type="checkbox" value=""
+                id="flexCheckChecked4">
+              <label class="form-check-label" for="flexCheckChecked4">
+                Eat
+              </label>
+            </div>
+          </label><br><br>
+          <label class="form-check-label">
+            Gender
+            <div class="form-check">
+              <input name="gender" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                checked>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Female
+              </label>
+            </div>
+            <div class="form-check">
+              <input name="gender" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Male
+              </label>
+            </div>
+          </label><br><br>
+          <label class="form-check-label">Age
+            <select name="age" required class="form-select" aria-label="Default select example">
+            </select>
+          </label>
+        </section>
+      </section>
+      <section>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        </div>
+      </section>
+    </form>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
